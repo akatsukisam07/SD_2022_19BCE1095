@@ -1,17 +1,17 @@
 public class Game {
     private Board board = new Board();
-    private Player white;
-    private Player black;
+    private Player A;
+    private Player B;
     public Game() {
         super();
     }
 
     public void setColorWhite(Player player) {
-        this.white = player;
+        this.A = player;
     }
 
     public void setColorBlack(Player player) {
-        this.black = player;
+        this.B = player;
     }
 
     public Board getBoard() {
@@ -23,27 +23,27 @@ public class Game {
     }
 
     public Player getWhite() {
-        return white;
+        return A;
     }
 
     public void setWhite(Player white) {
-        this.white = white;
+        this.A = A;
     }
 
     public Player getBlack() {
-        return black;
+        return B;
     }
 
     public void setBlack(Player black) {
-        this.black = black;
+        this.B = B;
     }
 
     public boolean initializeBoardGivenPlayers() {
-        if(this.black == null || this.white == null)
+        if(this.B == null || this.A == null)
             return false;
         this.board = new Board();
-        for(int i=0; i<black.getPieces().size(); i++){
-            board.getSpot(black.getPieces().get(i).getX(), black.getPieces().get(i).getY()).occupySpot(black.getPieces().get(i));
+        for(int i=0; i<B.getPieces().size(); i++){
+            board.getSpot(B.getPieces().get(i).getX(), B.getPieces().get(i).getY()).occupySpot(B.getPieces().get(i));
         }
         return true;
     }
